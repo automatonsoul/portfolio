@@ -6,79 +6,7 @@
     <title>Alexandra B. Project Officer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Base styles for the body, ensuring smooth scrolling and scroll-snapping */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff; /* Pure white background for minimalist feel */
-            color: #1a202c; /* Very dark grey text for strong contrast */
-            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
-            scroll-snap-type: y mandatory; /* Enable vertical scroll-snapping, mandatory stops */
-            overflow-y: scroll; /* Ensure vertical scrollbar is always present */
-            scroll-padding-top: 80px; /* Space for the sticky navigation bar, prevents content overlap */
-        }
-
-        /* Styles for each main section to enable scroll-snapping */
-        .page-section {
-            scroll-snap-align: start; /* Snap to the start of the section */
-            min-height: 100vh; /* Each section takes at least the full viewport height */
-            display: flex; /* Use flexbox for vertical centering of content */
-            align-items: center; /* Center content vertically */
-            justify-content: center; /* Center content horizontally */
-            padding: 2rem; /* Default padding for content within sections */
-        }
-
-        /* Responsive padding adjustment for smaller screens */
-        @media (max-width: 768px) {
-            .page-section {
-                padding: 1rem;
-            }
-        }
-
-        /* Primary button styling (from Mockup 5's aesthetic) */
-        .btn-primary {
-            @apply bg-gray-800 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105;
-        }
-
-        /* Secondary button styling (from Mockup 5's aesthetic) */
-        .btn-secondary {
-            @apply border border-gray-400 text-gray-700 font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105;
-        }
-
-        /* Subtle horizontal divider for minimalist look */
-        .minimal-divider {
-            @apply w-16 h-1 bg-gray-300 mx-auto my-12 rounded-full;
-        }
-
-        /* Styling for project cards (from Mockup 5's aesthetic) */
-        .project-minimal-card {
-            @apply bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 ease-in-out;
-        }
-
-        /* Styling for highlighting project impact/results */
-        .impact-text {
-            @apply text-green-700 font-semibold;
-        }
-
-        /* Back to Top Button styling */
-        #backToTopBtn {
-            @apply fixed bottom-8 right-8 bg-gray-800 text-white p-4 rounded-full shadow-lg cursor-pointer transition-opacity duration-300;
-            opacity: 0; /* Hidden by default */
-            visibility: hidden; /* Ensure it's not clickable when hidden */
-            z-index: 1000; /* Ensure it's above other content */
-        }
-
-        /* Class to show the Back to Top button */
-        #backToTopBtn.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Styling for the active navigation link (underline effect) */
-        .nav-link.active-underline {
-            @apply underline underline-offset-8 decoration-2 decoration-gray-900;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen flex flex-col">
 
@@ -99,7 +27,7 @@
 
         <section id="home-section" class="page-section bg-white text-center">
             <div class="max-w-4xl mx-auto">
-                <img src="https://placehold.co/200x200/e0e0e0/424242?text=Your+Photo" alt="Alexandra B. Professional Photo" class="rounded-full w-40 h-40 md:w-48 md:h-48 object-cover mx-auto mb-8 border-4 border-gray-200 shadow-md">
+                <img src="https://placehold.co/200x200/e0e0e0/424242?text=Your+Photo" alt="Alexandra B. Professional Photo" class="rounded-full w-40 h-40 md:w-48 md:h-48 object-cover mx-auto mb-8 border-4 border-gray-200 shadow-md" onerror="this.src='https://placehold.co/200x200/e0e0e0/424242?text=Photo+Error';">
                 <h2 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">Alexandra B.</h2>
                 <p class="text-2xl md:text-3xl font-light text-gray-700 max-w-3xl mx-auto">
                     Project Officer driven by curiosity, delivering efficient and collaborative success.
@@ -118,7 +46,7 @@
         </section>
 
         <section id="approach-section" class="page-section bg-gray-50">
-            <div class="max-w-4xl mx-auto p-8 rounded-xl shadow-md">
+            <div class="max-w-4xl mx-auto p-8 rounded-xl shadow-md bg-white">
                 <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center border-b-2 border-gray-300 pb-2">My Approach to Project Excellence</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
@@ -169,11 +97,11 @@
                             Impact: Saved 3 hours per leader monthly, reducing manual effort to a button press.
                         </p>
                         <p class="text-gray-600 text-sm">
-                            *Skills: Process Automation, Efficiency, Project Coordination*
+                            <em>Skills: Process Automation, Efficiency, Project Coordination</em>
                         </p>
                     </div>
                     <div class="order-1 md:order-2">
-                        <img src="https://placehold.co/500x300/e0e0e0/424242?text=Automation+Impact" alt="Automation Impact Visual" class="rounded-lg shadow-md w-full h-auto">
+                        <img src="https://placehold.co/500x300/e0e0e0/424242?text=Automation+Impact" alt="Automation Impact Visual" class="rounded-lg shadow-md w-full h-auto" onerror="this.src='https://placehold.co/500x300/e0e0e0/424242?text=Image+Error';">
                     </div>
                 </div>
 
@@ -190,11 +118,11 @@
                             Impact: Improved user adoption rates and supported seamless data migration.
                         </p>
                         <p class="text-gray-600 text-sm">
-                            *Skills: Change Management, User Training, Stakeholder Communication*
+                            <em>Skills: Change Management, User Training, Stakeholder Communication</em>
                         </p>
                     </div>
                     <div class="order-1">
-                        <img src="https://placehold.co/500x300/e0e0e0/424242?text=Transformation+Success" alt="Transformation Success Visual" class="rounded-lg shadow-md w-full h-auto">
+                         <img src="https://placehold.co/500x300/e0e0e0/424242?text=Transformation+Success" alt="Transformation Success Visual" class="rounded-lg shadow-md w-full h-auto" onerror="this.src='https://placehold.co/500x300/e0e0e0/424242?text=Image+Error';">
                     </div>
                 </div>
 
@@ -211,21 +139,21 @@
                             Impact: Reduced content generation time by 30%, accelerated brainstorming by 20%.
                         </p>
                         <p class="text-gray-600 text-sm">
-                            *Skills: AI Application, Innovation, Process Optimization*
+                            <em>Skills: AI Application, Innovation, Process Optimization</em>
                         </p>
                     </div>
                     <div class="order-1 md:order-2">
-                        <img src="https://placehold.co/500x300/e0e0e0/424242?text=AI+Innovation+Visual" alt="AI Innovation Visual" class="rounded-lg shadow-md w-full h-auto">
+                        <img src="https://placehold.co/500x300/e0e0e0/424242?text=AI+Innovation+Visual" alt="AI Innovation Visual" class="rounded-lg shadow-md w-full h-auto" onerror="this.src='https://placehold.co/500x300/e0e0e0/424242?text=Image+Error';">
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="about-section" class="page-section bg-gray-50">
-            <div class="max-w-4xl mx-auto p-8 rounded-xl shadow-md">
+            <div class="max-w-4xl mx-auto p-8 rounded-xl shadow-md bg-white">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-10 text-center">About Alexandra B.</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    My professional journey as a Project Officer is fueled by a relentless drive for **productivity** and a profound sense of **curiosity**. I am inherently **organized**, a trait that translates into a structured yet adaptable approach to managing complex initiatives.
+                    My professional journey as a Project Officer is fueled by a relentless drive for <strong>productivity</strong> and a profound sense of <strong>curiosity</strong>. I am inherently <strong>organized</strong>, a trait that translates into a structured yet adaptable approach to managing complex initiatives.
                 </p>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     I thrive on identifying opportunities for improvement and implementing solutions that deliver tangible value. This often involves exploring and integrating cutting-edge technologies, including artificial intelligence, to streamline processes, enhance decision-making, and empower teams to achieve more with less effort. My commitment is to foster environments where efficiency and innovation go hand-in-hand.
@@ -235,10 +163,10 @@
 
                 <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">My Professional Values</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                    <p class="text-gray-700 font-medium p-3 bg-white rounded-md shadow-sm">Proactive Problem Solving</p>
-                    <p class="text-700 font-medium p-3 bg-white rounded-md shadow-sm">Transparent Communication</p>
-                    <p class="text-gray-700 font-medium p-3 bg-white rounded-md shadow-sm">Continuous Learning</p>
-                    <p class="text-gray-700 font-medium p-3 bg-white rounded-md shadow-sm">Measurable Impact</p>
+                    <p class="text-gray-700 font-medium p-3 bg-gray-100 rounded-md shadow-sm">Proactive Problem Solving</p>
+                    <p class="text-gray-700 font-medium p-3 bg-gray-100 rounded-md shadow-sm">Transparent Communication</p>
+                    <p class="text-gray-700 font-medium p-3 bg-gray-100 rounded-md shadow-sm">Continuous Learning</p>
+                    <p class="text-gray-700 font-medium p-3 bg-gray-100 rounded-md shadow-sm">Measurable Impact</p>
                 </div>
 
                 <h3 class="text-2xl font-bold text-gray-800 mb-4 mt-10 text-center">Education & Certifications</h3>
@@ -251,7 +179,7 @@
         </section>
 
         <section id="contact-section" class="page-section bg-white">
-            <div class="max-w-md mx-auto p-8 rounded-xl shadow-md">
+            <div class="max-w-md mx-auto p-8 rounded-xl shadow-md border border-gray-200">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-10 text-center">Let's Connect</h2>
                 <p class="text-lg text-gray-700 mb-8 text-center">I'm always open to discussing new opportunities or collaborations. Feel free to reach out!</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
@@ -274,88 +202,10 @@
         <p>&copy; 2025 Alexandra B. All rights reserved.</p>
     </footer>
 
-    <button id="backToTopBtn">
+    <button id="backToTopBtn" title="Go to top">
         <i class="fas fa-arrow-up text-2xl"></i>
     </button>
 
-    <script>
-        // Get all main page sections and navigation links
-        const sections = document.querySelectorAll('.page-section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const backToTopBtn = document.getElementById('backToTopBtn');
-
-        // Function to smoothly scroll to a given section ID
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Add click event listeners to navigation buttons to trigger smooth scrolling
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetId = e.target.dataset.target; // Get the target section ID from data-target attribute
-                scrollToSection(targetId);
-            });
-        });
-
-        // Intersection Observer for dynamically underlining active navigation links
-        const observerOptions = {
-            root: null, // The viewport is the root
-            rootMargin: '0px', // No margin around the root
-            threshold: 0.5 // A section is considered "active" when 50% of it is visible
-        };
-
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // If a section is intersecting (in view), remove active class from all nav links
-                    navLinks.forEach(link => link.classList.remove('active-underline'));
-                    // Add active class to the nav link corresponding to the currently intersecting section
-                    const activeLink = document.querySelector(`.nav-link[data-target="${entry.target.id}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('active-underline');
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe each main section for changes in visibility
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-
-        // Logic for showing/hiding the Back to Top button based on scroll position
-        window.onscroll = function() {
-            // Check scroll position for both document.body and document.documentElement for broader browser compatibility
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopBtn.classList.add('show'); // Show button if scrolled down
-            } else {
-                backToTopBtn.classList.remove('show'); // Hide button if near the top
-            }
-        };
-
-        // Click listener for the Back to Top button
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Smoothly scroll to the very top
-        });
-
-        // Set the initial active navigation link when the page first loads
-        document.addEventListener('DOMContentLoaded', () => {
-            let initialActiveSection = sections[0].id; // Default to the first section
-            // Loop through sections to find which one is initially in view
-            for (let i = 0; i < sections.length; i++) {
-                const rect = sections[i].getBoundingClientRect();
-                // If the section is significantly in view (e.g., its top is within 70% of viewport height and bottom is also visible)
-                if (rect.top <= window.innerHeight * 0.7 && rect.bottom >= window.innerHeight * 0.3) {
-                    initialActiveSection = sections[i].id;
-                    break; // Found the initial active section, exit loop
-                }
-            }
-            // Apply the active underline to the corresponding navigation link
-            const initialActiveLink = document.querySelector(`.nav-link[data-target="${initialActiveSection}"]`);
-            if (initialActiveLink) {
-                initialActiveLink.classList.add('active-underline');
-            }
-        });
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
