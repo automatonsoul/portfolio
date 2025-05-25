@@ -236,7 +236,7 @@
                 <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">My Professional Values</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
                     <p class="text-gray-700 font-medium p-3 bg-white rounded-md shadow-sm">Proactive Problem Solving</p>
-                    <p class="text-700 font-medium p-3 bg-white rounded-md shadow-sm">Transparent Communication</p>
+                    <p class="text-gray-700 font-medium p-3 bg-white rounded-md shadow-sm">Transparent Communication</p>
                     <p class="text-gray-700 font-medium p-3 bg-white rounded-md shadow-sm">Continuous Learning</p>
                     <p class="text-gray-700 font-medium p-3 bg-white rounded-md shadow-sm">Measurable Impact</p>
                 </div>
@@ -340,18 +340,18 @@
 
         // Set the initial active navigation link when the page first loads
         document.addEventListener('DOMContentLoaded', () => {
-            let initialActiveSection = sections[0].id; // Default to the first section
+            let initialActiveSectionId = sections[0].id; // Default to the first section
             // Loop through sections to find which one is initially in view
             for (let i = 0; i < sections.length; i++) {
                 const rect = sections[i].getBoundingClientRect();
                 // If the section is significantly in view (e.g., its top is within 70% of viewport height and bottom is also visible)
                 if (rect.top <= window.innerHeight * 0.7 && rect.bottom >= window.innerHeight * 0.3) {
-                    initialActiveSection = sections[i].id;
+                    initialActiveSectionId = sections[i].id;
                     break; // Found the initial active section, exit loop
                 }
             }
             // Apply the active underline to the corresponding navigation link
-            const initialActiveLink = document.querySelector(`.nav-link[data-target="${initialActiveSection}"]`);
+            const initialActiveLink = document.querySelector(`.nav-link[data-target="${initialActiveSectionId}"]`);
             if (initialActiveLink) {
                 initialActiveLink.classList.add('active-underline');
             }
