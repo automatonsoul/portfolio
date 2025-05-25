@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.page-section');
     const navLinks = document.querySelectorAll('.nav-link');
     const backToTopBtn = document.getElementById('backToTopBtn');
+    const mainTitle = document.querySelector('nav h1'); // Get the main title element
 
     // Ensure elements exist before adding listeners
     if (!backToTopBtn) {
@@ -14,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (navLinks.length === 0) {
         console.error("No navigation links found.");
+    }
+    if (!mainTitle) {
+        console.error("Main title element (nav h1) not found.");
     }
 
     // Function to smoothly scroll to a given section ID
@@ -93,12 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial active navigation link setting:
     // The IntersectionObserver should handle this correctly on load if a section is in view.
-    // For a more robust initial highlighting, especially if the page might load scrolled down,
-    // we can iterate through sections on load and find the first one that's intersecting.
-    // However, the observer usually fires quickly enough.
-    // Let's ensure the first link is active if no section is immediately intersecting at the very top.
-    // This can be refined if specific load scenarios are problematic.
-
     // Small delay to allow observer to fire first, then check if any link is active.
     // If not (e.g. page loaded at very top before observer threshold met for home), activate home.
     setTimeout(() => {
@@ -121,4 +119,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 100); // 100ms delay
 
+    // "Crazy" animation for the main title
+    if (mainTitle) {
+        let colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#F1C40F", "#8E44AD"];
+        let colorIndex = 0;
+        let scaleUp = true;
+
+        mainTitle.style.transition = "color 0.5s ease-in-out, transform 0.3s ease-in-out"; // Smooth transitions
+
+        setInterval(() => {
+            // Change color
+            mainTitle.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+
+            // Pulse effect
+            if (scaleUp) {
+                mainTitle.style.transform = "scale(1.05)";
+            } else {
+                mainTitle.style.transform = "scale(1)";
+            }
+            scaleUp = !scaleUp;
+
+        }, 1000); // Change every 1 second
+
+        // Make it wiggle on mouseover
+        mainTitle.addEventListener('mouseover', () => {
+            mainTitle.style.transform = 'rotate(-5deg) scale(1.1)';
+        });
+        mainTitle.addEventListener('mouseout', () => {
+            mainTitle.style.transform = 'rotate(0deg) scale(1)';
+        });
+    }
 });
