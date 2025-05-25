@@ -28,14 +28,6 @@ body {
     /* Adjust scroll-padding-top if nav height changes on mobile */
 }
 
-/* Primary button styling (using Tailwind's @apply directive) */
-/* IMPORTANT: @apply directives are processed by Tailwind CSS. */
-/* If you are not using a Tailwind build process for your external CSS, */
-/* you'll need to replace these with standard CSS or utility classes in HTML. */
-/* For simplicity in a static setup, these would ideally be utility classes in HTML. */
-/* However, since Tailwind is loaded via CDN, these custom classes with @apply won't work directly in external CSS without a build step. */
-/* We will convert them to regular CSS for this example. */
-
 .btn-primary {
     background-color: #2d3748; /* bg-gray-800 */
     color: #ffffff; /* text-white */
@@ -55,7 +47,6 @@ body {
     transform: scale(1.05); /* hover:scale-105 */
 }
 
-/* Secondary button styling */
 .btn-secondary {
     border: 1px solid #cbd5e0; /* border border-gray-400 */
     color: #4a5568; /* text-gray-700 */
@@ -74,7 +65,6 @@ body {
     transform: scale(1.05); /* hover:scale-105 */
 }
 
-/* Subtle horizontal divider */
 .minimal-divider {
     width: 4rem; /* w-16 */
     height: 0.25rem; /* h-1 */
@@ -86,7 +76,6 @@ body {
     border-radius: 9999px; /* rounded-full */
 }
 
-/* Styling for project cards */
 .project-minimal-card {
     background-color: #f9fafb; /* bg-gray-50 */
     padding: 2rem; /* p-8 */
@@ -100,49 +89,73 @@ body {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* hover:shadow-md */
 }
 
-/* Styling for highlighting project impact/results */
 .impact-text {
     color: #047857; /* text-green-700 */
     font-weight: 600; /* font-semibold */
 }
 
-/* Back to Top Button styling */
 #backToTopBtn {
     position: fixed !important;
     bottom: 32px !important;
     right: 32px !important;
-    background-color: #1a202c !important; /* Corresponds to Tailwind's gray-900 or similar dark shade */
+    background-color: #1a202c !important;
     color: #ffffff !important;
-    padding: 16px !important; /* More explicit than Tailwind classes here */
-    border-radius: 9999px !important; /* Fully rounded for a circular button */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; /* Strong shadow */
+    padding: 16px !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
     cursor: pointer !important;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out !important;
     opacity: 0;
     visibility: hidden;
-    z-index: 10000 !important; /* Ensure it's on top of other content */
+    z-index: 10000 !important;
 }
 
-/* Class to show the Back to Top button */
 #backToTopBtn.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* Styling for the active navigation link (underline effect) */
 .nav-link.active-underline {
     text-decoration: underline;
-    text-underline-offset: 8px; /* underline-offset-8 */
-    text-decoration-thickness: 2px; /* decoration-2 */
-    text-decoration-color: #1a202c; /* decoration-gray-900 */
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #1a202c;
 }
 
-/* Footer styling */
 footer {
-    background-color: #333; /* Darker grey to clearly separate from content */
+    background-color: #333;
     color: #fff;
     padding: 1.5rem;
     text-align: center;
-    /* Footer should not be a snap point */
     scroll-snap-align: none;
+}
+
+/* --- NEW CSS FOR LOAD ANIMATIONS --- */
+
+/* Initial state for elements that will be animated on load */
+.load-hidden {
+    opacity: 0;
+    /* Elements start invisible. The animation will make them visible. */
+}
+
+/* Define the keyframes for our fade-in-up animation */
+@keyframes fadeInUpOnLoad {
+    0% {
+        opacity: 0;
+        transform: translateY(25px); /* Start 25px down */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Class to apply the animation */
+.apply-fade-in-up-on-load {
+    animation-name: fadeInUpOnLoad;
+    animation-duration: 0.7s; /* How long the animation takes */
+    animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000); /* A nice smooth easing */
+    animation-fill-mode: forwards; /* Ensures the element stays visible and in its final state */
+    /* We'll use a custom property for the delay, set by JavaScript */
+    animation-delay: var(--animation-load-delay, 0s);
 }
